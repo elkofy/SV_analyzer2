@@ -1,6 +1,11 @@
 const express = require("express");
+const res = require("express/lib/response");
+const R = require("r-integration");
 const app = express();
 const cors = require("cors");
+
+
+var array;
 
 
 global.__basedir = __dirname;

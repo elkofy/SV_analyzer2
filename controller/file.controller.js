@@ -13,7 +13,6 @@ const analyseXlSX = async (req, res) => {
     const filepath = path.parse(fileName).name;
     var obj = getXlsxData(fileName);
     var seuils = getSeuils(filepath);
-    console.log(seuils);
     res.status(200).send({
       Seuils: seuils,
       Data: obj,
@@ -21,9 +20,6 @@ const analyseXlSX = async (req, res) => {
 
     fs.unlink("./excel/"+fileName, (err => {
         if (err) console.log(err);
-        else {
-          console.log("\nDeleted file:"+fileName);
-        }
       }));
 
 
