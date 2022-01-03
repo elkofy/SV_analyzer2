@@ -11,7 +11,8 @@ var array;
 global.__basedir = __dirname;
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+
+  origin:'*',
 };
 
 app.use(cors(corsOptions));
@@ -21,7 +22,7 @@ const initRoutes = require("./routes");
 app.use(express.urlencoded({ extended: true }));
 initRoutes(app);
 
-let port = 8080;
+let port = 3000;
 app.listen(port, () => {
   console.log(`Running at localhost:${port}`);
 });
